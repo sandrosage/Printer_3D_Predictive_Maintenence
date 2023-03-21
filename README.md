@@ -15,7 +15,7 @@ Afterward, the data is processed with the Timeseries-method. You can specify the
     preprocess_timeseries_data(nodash_list, dash_list, series_size, shift)
 ```
 
-You pass both lists belonging to the classes, the window size and the shift into the function. ``series_size`` represents the window size and ``shift`` is specified for the overlapping between the windows. For example, `shift=8` means that the windows are overlapping with an offset of 8 samples.
+You pass both lists belonging to the classes, the window size and the shift into the function. ``series_size`` represents the window size and ``shift`` is specified for the overlapping between the windows. For example, `shift=8` means that the windows are overlapping with an offset of 8 samples. In this case, we used ``series_size=5000`` and `shift=8` as being a good approach for achieving high accuracy.
 
 The model at the end of the process is a Convolutional-Neural-Network with ``input_shape=(5000,1)``. The code for creating the model is the following:
 
