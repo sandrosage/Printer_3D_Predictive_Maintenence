@@ -11,25 +11,25 @@ In **`exploration_printer3D_data.ipynb`** the recordings have been analyzed and 
 
 Afterward, the data is processed with the Timeseries-method. The model at the end of the process is a Convolutional-Neural-Network with ``input_shape=(5000,1)``. The code for creating the model is the following:
 ``python
-model = Sequential(
-    [
-        Conv1D(filters=32, kernel_size=3, activation='relu', input_shape=(5000,1)),
-        MaxPooling1D(pool_size=4),
-        Conv1D(filters=32, kernel_size=3, activation='relu'),
-        MaxPooling1D(pool_size=4),
-        Conv1D(filters=32, kernel_size=3, activation='relu'),
-        MaxPooling1D(pool_size=4),
-        
-        Conv1D(filters=32, kernel_size=3, activation='relu'),
-        MaxPooling1D(pool_size=4),
-        Conv1D(filters=32, kernel_size=3, activation='relu'),
-        MaxPooling1D(pool_size=2),
-        Flatten(),
-        Dense(100, activation = "relu", name = "hidden4"),
-        Dense(50, activation = "relu", name = "hidden6"),
-        Dense(2, activation ="softmax", name = "Output"),
-    ]
-)
+    model = Sequential(
+        [
+            Conv1D(filters=32, kernel_size=3, activation='relu', input_shape=(5000,1)),
+            MaxPooling1D(pool_size=4),
+            Conv1D(filters=32, kernel_size=3, activation='relu'),
+            MaxPooling1D(pool_size=4),
+            Conv1D(filters=32, kernel_size=3, activation='relu'),
+            MaxPooling1D(pool_size=4),
+            
+            Conv1D(filters=32, kernel_size=3, activation='relu'),
+            MaxPooling1D(pool_size=4),
+            Conv1D(filters=32, kernel_size=3, activation='relu'),
+            MaxPooling1D(pool_size=2),
+            Flatten(),
+            Dense(100, activation = "relu", name = "hidden4"),
+            Dense(50, activation = "relu", name = "hidden6"),
+            Dense(2, activation ="softmax", name = "Output"),
+        ]
+    )
 ``
 
 The input shape means that 5000 Samples are fed into the network at once. This process imitates the Windowing. After the training and validation process the model is evaluated with a validation accuracy of ```val_accuracy: 0.9853``.
