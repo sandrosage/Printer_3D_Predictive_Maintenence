@@ -1,3 +1,7 @@
+"""
+The code is written by Philipp Neubauer
+"""
+
 from time import sleep
 import serial
 import time

@@ -1,3 +1,7 @@
+/*
+The code is written by Philipp Neubauer 
+*/
+
 #include <Arduino.h>
 #include <Wire.h>
 #include <INA219_WE.h>
