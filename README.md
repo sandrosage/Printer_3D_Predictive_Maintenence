@@ -9,7 +9,15 @@ In **`exploration_printer3D_data.ipynb`** the recordings have been analyzed and 
 
 ![CurrentPulses](current_impulse_all.png)
 
-Afterward, the data is processed with the Timeseries-method. The model at the end of the process is a Convolutional-Neural-Network with ``input_shape=(5000,1)``. The code for creating the model is the following:
+Afterward, the data is processed with the Timeseries-method. You can specify the shift, which is responsible for the overlapping between the windows, and the window size. This is implemented in the following function:
+
+```python
+    preprocess_timeseries_data(nodash_list, dash_list, series_size, shift)
+```
+
+You pass both lists belonging to the classes, the window size and the shift into the function. ``series_size`` represents the window size and ``shift`` is specified for the overlapping between the windows. For example, `shift=8` means that the windows are overlapping with an offset of 8 samples.
+
+The model at the end of the process is a Convolutional-Neural-Network with ``input_shape=(5000,1)``. The code for creating the model is the following:
 
 ```python
     model = Sequential(
