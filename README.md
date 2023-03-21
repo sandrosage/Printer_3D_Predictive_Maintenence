@@ -5,7 +5,7 @@ For every class 3 versions of prints have been created and recorded. Different a
 
 # Data acquisition
 The current pulses of the 3D printer are measured with an Arduino and transmitted to a Raspberry Pi, which is storing the data. The code for the Arduino is in 
-**`Data_Acquisition/currentsens.ino`** and for code for the Raspberry Pi is located in **`/Data_Acquisition/currentSerial.py`**.
+**`Data_Acquisition/currentsens.ino`** and for code for the Raspberry Pi is located in **`/Data_Acquisition/currentSerial.py`**. Both code files were implemented by Philipp Neubauer.
 
 # Exploration in data and Windowing with DNN
 
