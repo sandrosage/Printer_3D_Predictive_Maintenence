@@ -10,7 +10,7 @@ In **`exploration_printer3D_data.ipynb`** the recordings have been analyzed and 
 ![CurrentPulses](current_impulse_all.png)
 
 Afterward, the data is processed with the Timeseries-method. The model at the end of the process is a Convolutional-Neural-Network with ``input_shape=(5000,1)``. The code for creating the model is the following:
-``python
+```python
     model = Sequential(
         [
             Conv1D(filters=32, kernel_size=3, activation='relu', input_shape=(5000,1)),
@@ -29,6 +29,6 @@ Afterward, the data is processed with the Timeseries-method. The model at the en
             Dense(2, activation ="softmax", name = "Output"),
         ]
     )
-``
+```
 
-The input shape means that 5000 Samples are fed into the network at once. This process imitates the Windowing. After the training and validation process the model is evaluated with a validation accuracy of ```val_accuracy: 0.9853``.
+The input shape means that 5000 Samples are fed into the network at once. This process imitates Windowing. After the training and validation process, the model is evaluated with a validation accuracy of ```val_accuracy: 0.9853``.
