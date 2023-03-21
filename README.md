@@ -19,7 +19,6 @@ Afterward, the data is processed with the Timeseries-method. The model at the en
             MaxPooling1D(pool_size=4),
             Conv1D(filters=32, kernel_size=3, activation='relu'),
             MaxPooling1D(pool_size=4),
-            
             Conv1D(filters=32, kernel_size=3, activation='relu'),
             MaxPooling1D(pool_size=4),
             Conv1D(filters=32, kernel_size=3, activation='relu'),
