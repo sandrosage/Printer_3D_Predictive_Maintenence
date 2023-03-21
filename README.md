@@ -49,14 +49,14 @@ The tolerance range offers the possibility of using a tolerance value up to whic
 The plateau method is implemented within the following function:
 
 ```python 
-    create_plateau(plateau_size, df)
+    create_plateau(number_of_plateaus, df)
 ```
 With the parameter ``plateau_size`` you can specify the number of plateaus, which are created and in which the data is divided.
 The overall function, which combines all the different methods is:
 
 
 ```python 
-    load_data(path, plateau_size=None)
+    load_data(path, number_of_plateaus=None)
 ```
 
 The argument ``path`` specifies the path where the source data is located. For the default settings, the plateau size is set to ``plateau_size=None``. It means that you only have to set this argument if you want to use a plateau size, instead the tolerance range is used.
@@ -64,7 +64,7 @@ The argument ``path`` specifies the path where the source data is located. For t
 For the next steps, we load the data, make the plateaus and store the result in a CSV-File:
 
 ```python 
-    df = load_data(path = "Printer3D", plateau_size=20)
+    df = load_data(path = "Printer3D", number_of_plateaus=20)
 
     # store dataset for train/test model
     df.to_csv("3d_printer_plateau.csv", index=False)
