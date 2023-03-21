@@ -94,3 +94,5 @@ The printed result is:
 ``[0.5 1.  0.5]``
 
 This means that the ML algorithm is only trained on a small amount of data. It does not learn how to generalize the data. This is caused by the fact that only 6 data points (3 per class) are available for cross-validation and thus for training. The algorithm can not perform better than random guessing. The solution for this problem is to generate more training data, so that the algorithm can learn how to generalize.
+
+*Sandro Sage; last updated: 21.03.2023*
