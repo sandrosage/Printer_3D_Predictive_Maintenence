@@ -10,6 +10,7 @@ In **`exploration_printer3D_data.ipynb`** the recordings have been analyzed and 
 ![CurrentPulses](current_impulse_all.png)
 
 Afterward, the data is processed with the Timeseries-method. The model at the end of the process is a Convolutional-Neural-Network with ``input_shape=(5000,1)``. The code for creating the model is the following:
+
 ```python
     model = Sequential(
         [
@@ -39,4 +40,8 @@ In this section, the presented plateau method is used for generating the trainin
 - tolerance range
 - plateau size
 
-The tolerance range offers the possibility of using a tolerance value up to which all data points are counted. So you first calculate the maximum and then consider all data points in the range down to the tolerance value. The tolerance range is set to ``tolerance=10`` mA, but it can be specified in the function ```python only_max(df, tolerance)```.
+The tolerance range offers the possibility of using a tolerance value up to which all data points are counted. So you first calculate the maximum and then consider all data points in the range down to the tolerance value. The tolerance range is set to ``tolerance=10`` mA, but it can be specified in this function:
+
+```python 
+    only_max(df, tolerance)
+```
