@@ -3,7 +3,7 @@
 This is the repository for the predictive maintenance task of classifying 3D prints. The 3D prints are divided into two classes: Dash and noDash
 For every class 3 versions of prints have been created and recorded. Different approaches have been evaluated. One way is to make plateaus within the electrical impulse and count/analyze how many datapoints are belonging to each plateau. The other approach is to consider the recordings in a temporal aspect. The Timeseries-method of making windows or temporal subsets is used. For both methods, only the "BUS" feature is used because it represents the current pulse of the 3D printer.
 
-# Exploration in data
+# Exploration in data and Windowing with DNN
 
 In **`exploration_printer3D_data.ipynb`** the recordings have been analyzed and displayed with Matplotlib. In total all recordings whether Dash or noDash are presented in the following image:
 
@@ -32,3 +32,11 @@ Afterward, the data is processed with the Timeseries-method. The model at the en
 ```
 
 The input shape means that 5000 Samples are fed into the network at once. This process imitates Windowing. After the training and validation process, the model is evaluated with a validation accuracy of ```val_accuracy: 0.9853``.
+
+# Plateau method with Scikit-Learn
+In this section, the presented plateau method is used for generating the training and testing datasets. There are two options:
+
+- tolerance range
+- plateau size
+
+The tolerance range offers the possibility of using a tolerance value up to which all data points are counted. So you first calculate the maximum and then consider all data points in the range down to the tolerance value. The tolerance range is set to ``tolerance=10`` mA, but it can be specified in the function ```python only_max(df, tolerance)```.
